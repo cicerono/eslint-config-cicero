@@ -1,30 +1,29 @@
 module.exports = {
-  "parser": "babel-eslint",
-  "plugins": [
-    "react"
-  ],
+  parser: "babel-eslint",
+  plugins: [],
   ecmaFeatures: {
-    "modules": true,
     "arrowFunctions": true,
+    "blockBindings": true,
     "classes": true,
     "destructuring": true,
-    "jsx": true,
-    "blockBindings": true,
+    "modules": true,
   },
   rules: {
-    "vars-on-top":[0],
     "brace-style": [2, "1tbs"],
+    "comma-dangle": [2, "always-multiline"],
     "comma-style": [2, "last"],
     "indent": [2, 2],
     "no-extend-native": [0],
+    "no-extra-strict": [0],
     "no-multiple-empty-lines": [2, {"max": 1}],
-    "space-before-function-paren": [2, "always"],
+    "no-var": [2],
+    "one-var": [2, "never"],
+    "prefer-const": [2],
     "space-after-keywords": [2, "always"],
     "space-before-blocks": [2, "always"],
+    "space-before-function-paren": [2, "always"],
     "space-in-parens": [2, "never"],
     "space-unary-ops": [2, {"words": true, "nonwords": false}],
-    "no-extra-strict": [0],
-    "prefer-const": [2],
-    "comma-dangle": [2, "always-multiline"],
+    "vars-on-top":[0],
   }
 };
