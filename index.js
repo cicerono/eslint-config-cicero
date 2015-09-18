@@ -19,6 +19,7 @@ module.exports = {
     "no-var": [2],
     "one-var": [2, "never"],
     "prefer-const": [2],
+    "radix": [2],
     "space-after-keywords": [2, "always"],
     "space-before-blocks": [2, "always"],
     "space-before-function-paren": [2, "always"],
