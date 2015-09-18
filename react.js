@@ -19,7 +19,7 @@ module.exports = {
   }),
   rules: _.assign(base.rules, {
     "jsx-quotes": [2, "prefer-double"],
-    "react/jsx-boolean-value": 2,
+    "react/jsx-boolean-value": [2, "always"],
     "react/jsx-no-undef": 2,
     "react/jsx-uses-react": 2,
     "react/no-multi-comp": 2,
