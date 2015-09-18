@@ -12,7 +12,7 @@ module.exports = {
     "brace-style": [2, "1tbs"],
     "comma-dangle": [2, "always-multiline"],
     "comma-style": [2, "last"],
-    "indent": [2, 2],
+    "indent": [2, 2, {"SwitchCase": 1}],
     "no-extend-native": [0],
     "no-extra-strict": [0],
     "no-multiple-empty-lines": [2, {"max": 1}],
