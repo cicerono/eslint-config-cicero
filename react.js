@@ -5,6 +5,7 @@ base.plugins.push("react");
 var order = [
   "lifecycle",
   "/^on.+$/",
+  "mixins",
   "/^(get|set)(?!(InitialState$|DefaultProps$|ChildContext$)).+$/",
   "everything-else",
   "/^render.+$/",
