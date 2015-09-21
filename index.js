@@ -17,6 +17,7 @@ module.exports = {
     "no-extra-strict": [0],
     "no-multiple-empty-lines": [2, {"max": 1}],
     "no-var": [2],
+    "no-unused-vars": [2],
     "one-var": [2, "never"],
     "prefer-const": [2],
     "radix": [2],
