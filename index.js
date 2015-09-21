@@ -14,7 +14,6 @@ module.exports = {
     "comma-style": [2, "last"],
     "indent": [2, 2, {"SwitchCase": 1}],
     "no-extend-native": [0],
-    "no-extra-strict": [0],
     "no-multiple-empty-lines": [2, {"max": 1}],
     "no-var": [2],
     "no-unused-vars": [2],
