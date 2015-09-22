@@ -27,6 +27,6 @@ module.exports = {
     "react/no-multi-comp": 2,
     "react/no-unknown-property": 2,
     "react/prop-types": 2,
-    "react/sort-comp": [2, {"order": order}],
+    "react/sort-comp": [0, {"order": order}],
   }),
 };
