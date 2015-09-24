@@ -1,4 +1,7 @@
-module.exports = {
+var _ = require("lodash");
+var defaults = _.cloneDeep(require("./defaults"));
+
+module.exports = _.defaultsDeep({
   parser: "babel-eslint",
   plugins: [],
   ecmaFeatures: {
@@ -15,6 +18,7 @@ module.exports = {
     "indent": [2, 2, {"SwitchCase": 1}],
     "no-extend-native": [0],
     "no-multiple-empty-lines": [2, {"max": 1}],
+    "no-underscore-dangle": [0],
     "no-unused-vars": [2],
     "no-var": [2],
     "one-var": [2, "never"],
@@ -28,4 +32,4 @@ module.exports = {
     "space-unary-ops": [2, {"words": true, "nonwords": false}],
     "vars-on-top":[0],
   }
-};
+}, defaults);
