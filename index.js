@@ -15,6 +15,7 @@ module.exports = _.defaultsDeep({
     "brace-style": [2, "1tbs"],
     "comma-dangle": [2, "always-multiline"],
     "comma-style": [2, "last"],
+    "dot-location": [2, "property"],
     "indent": [2, 2, {"SwitchCase": 1}],
     "no-extend-native": [0],
     "no-multiple-empty-lines": [2, {"max": 1}],
