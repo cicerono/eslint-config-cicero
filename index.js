@@ -20,6 +20,7 @@ module.exports = _.defaultsDeep({
     "no-dupe-keys": [2],
     "no-extend-native": [0],
     "no-multiple-empty-lines": [2, {"max": 1}],
+    "no-undef": [2],
     "no-underscore-dangle": [0],
     "no-unused-vars": [2],
     "no-var": [2],
@@ -32,6 +33,6 @@ module.exports = _.defaultsDeep({
     "space-before-function-paren": [2, "always"],
     "space-in-parens": [2, "never"],
     "space-unary-ops": [2, {"words": true, "nonwords": false}],
-    "vars-on-top":[0],
+    "vars-on-top": [0],
   }
 }, defaults);
