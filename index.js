@@ -17,6 +17,7 @@ module.exports = _.defaultsDeep({
     "comma-style": [2, "last"],
     "dot-location": [2, "property"],
     "indent": [2, 2, {"SwitchCase": 1}],
+    "new-cap": [2, { "capIsNewExceptions": ["List", "Map", "OrderedMap"] }],
     "no-dupe-keys": [2],
     "no-extend-native": [0],
     "no-multiple-empty-lines": [2, {"max": 1}],
