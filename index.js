@@ -18,6 +18,7 @@ module.exports = _.defaultsDeep({
     "default-case": [2],
     "dot-location": [2, "property"],
     "indent": [2, 2, {"SwitchCase": 1}],
+    "max-len": [2, 100, 2, {"ignorePattern": "(^import)|(^} from)"}],
     "new-cap": [2, { "capIsNewExceptions": ["List", "Map", "OrderedMap"] }],
     "no-dupe-keys": [2],
     "no-extend-native": [0],
