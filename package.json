@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-cicero",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "eslint config used in Cicero projects",
   "main": "index.js",
   "scripts": {
