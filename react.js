@@ -25,7 +25,7 @@ module.exports = {
     "react/jsx-indent": [2, 2],
     "react/jsx-no-undef": 2,
     "react/jsx-uses-react": 2,
-    "react/no-deprecated": 1,
+    "react/no-deprecated": 0,
     "react/no-multi-comp": 0,
     "react/no-unknown-property": 2,
     "react/prop-types": 2,
