@@ -12,6 +12,12 @@ var order = [
   "render"
 ];
 
+var sortPropTypesOptions = {
+  "callbacksLast": true,
+  "ignoreCase": true,
+  "requiredFirst": false,
+};
+
 module.exports = {
   parser: "babel-eslint",
   plugins: base.plugins,
@@ -30,5 +36,6 @@ module.exports = {
     "react/no-unknown-property": 2,
     "react/prop-types": 2,
     "react/sort-comp": [1, {"order": order}],
+    "react/jsx-sort-prop-types": [2, sortPropTypesOptions],
   }),
 };
