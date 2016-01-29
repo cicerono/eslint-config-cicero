@@ -22,6 +22,7 @@ module.exports = {
     "jsx-quotes": [2, "prefer-double"],
     "react/display-name": [1, { "acceptTranspilerName": true }],
     "react/jsx-boolean-value": [2, "always"],
+    "react/jsx-indent": [2, 2],
     "react/jsx-no-undef": 2,
     "react/jsx-uses-react": 2,
     "react/no-deprecated": 1,
