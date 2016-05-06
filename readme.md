@@ -3,24 +3,33 @@
 ## Install
 
 ```
- $ npm i --save-dev https://github.com/cicerono/eslint-config-cicero.git
+ $ npm i --save-dev eslint-config-cicero
 ```
+## Usage
+Extend in your local config.
 
-If you haven't installed `eslint`, `babel-eslint` and
-if you use react you also need `eslint-plugin-react`.
-
-then add the following in your `.eslintrc`.
-
+#### Strict
 ```json
 {
-  "extends": "cicero"
+  "extends": "cicero",
 }
 ```
 
-or
+#### Regular
 
 ```json
 {
-  "extends": "cicero/react"
+  "extends": "cicero/base",
 }
 ```
+
+### With lint-filter
+Extend strict in .eslintrc and regular in .eslintsloppyrc and then use lint-filter with .eslintrc.
+
+Run this on to lint:
+```
+eslint -c .eslintsloppyrc .
+eslint $(lint-filter list-files) -f checkstyle | lint-filter
+```
+
+The reason that .eslintrc contains strict is to make editors lint those rules as well.

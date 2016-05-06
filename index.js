@@ -1,45 +1,44 @@
-var _ = require("lodash");
-var defaults = _.cloneDeep(require("./defaults"));
-
-module.exports = _.defaultsDeep({
-  parser: "babel-eslint",
-  plugins: [],
-  ecmaFeatures: {
-    "arrowFunctions": true,
-    "blockBindings": true,
-    "classes": true,
-    "destructuring": true,
-    "modules": true,
+module.exports = {
+  "extends": ["eslint-config-airbnb", "plugin:lodash/recommended", "plugin:import/errors", "plugin:import/warnings"],
+  "plugins": ["mocha", "lodash"],
+  "globals": {
+    "__DEV__": false,
+    "__TEST__": false,
+    "__RELEASE__": false,
+    "API_PREFIX": false,
+    "exports": false,
+    "fixtures": false,
+    "LOG_LEVEL": false,
+    "sinon": false,
+    "SLOW_TEST_TIMEOUT": false,
+    "TestUtils": false,
+    "expect": false
   },
-  rules: {
-    "array-bracket-spacing": [2, "never"],
-    "arrow-spacing": [2],
-    "brace-style": [2, "1tbs"],
-    "comma-dangle": [2, "always-multiline"],
-    "comma-style": [2, "last"],
-    "default-case": [2],
-    "dot-location": [2, "property"],
-    "indent": [2, 2, {"SwitchCase": 1}],
+  "ecmaFeatures": {
+    "templateStrings": true
+  },
+  "rules": {
+    "lodash/prefer-lodash-method": [2, {"except": ["find"]}],
     "max-len": [2, 100, 2, {"ignorePattern": "(^import)|(^} from)"}],
-    "new-cap": [2, { "capIsNewExceptions": ["List", "Map", "OrderedMap"] }],
-    "no-dupe-keys": [2],
-    "no-extend-native": [0],
-    "no-multi-spaces": [2],
-    "no-multiple-empty-lines": [2, {"max": 1}],
-    "no-undef": [2],
-    "no-underscore-dangle": [0],
-    "no-unused-vars": [2],
-    "no-var": [2],
-    "object-curly-spacing": [2, "always"],
-    "one-var": [2, "never"],
-    "prefer-const": [2],
-    "radix": [2],
-    "semi": [2, "always"],
-    "space-after-keywords": [2, "always"],
-    "space-before-blocks": [2, "always"],
-    "space-before-function-paren": [2, "always"],
-    "space-in-parens": [2, "never"],
-    "space-unary-ops": [2, {"words": true, "nonwords": false}],
-    "vars-on-top": [0],
+    "mocha/no-exclusive-tests": 2,
+    "no-multiple-empty-lines": [2, {"max": 1, "maxBOF": 0, "maxEOF": 0}],
+    "object-curly-spacing": [2, "never"],
+    "quotes": [2, "double"],
+    "react/jsx-curly-spacing": [2, "never", { "allowMultiline": true }],
+    "react/jsx-equals-spacing": [2, "never"],
+    "react/jsx-first-prop-new-line": [2, "multiline"],
+    "react/jsx-indent": [2, 2],
+    "react/jsx-key": 2,
+    "react/jsx-no-duplicate-props": [2, {"ignoreCase": true}],
+    "react/jsx-sort-prop-types": [2, { "callbacksLast": true, "ignoreCase": true, "requiredFirst": false }],
+
+    "func-names": 0,
+    "import/no-named-as-default": 0,
+    "no-case-declarations": 0,
+    "no-else-return": 0,
+    "react/jsx-no-bind": 0,
+    "react/prefer-es6-class": 0,
+
+    "prefer-template": 0,
   }
-}, defaults);
+}

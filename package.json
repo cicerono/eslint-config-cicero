@@ -4,6 +4,7 @@
   "description": "eslint config used in Cicero projects",
   "main": "index.js",
   "scripts": {
+    "postinstall": "npm install eslint@^2.9.0 eslint-plugin-jsx-a11y@^1.0.2 eslint-plugin-import@^1.6.0 eslint-plugin-react@^5.0.1",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -20,6 +21,6 @@
   },
   "homepage": "https://github.com/cicerono/cicero-eslint-config#readme",
   "dependencies": {
-    "lodash": "^3.10.1"
+    "eslint-config-airbnb": "^8.0.0"
   }
 }
