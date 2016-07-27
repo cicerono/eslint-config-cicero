@@ -1,6 +1,6 @@
 module.exports = {
   "extends": ["eslint-config-airbnb", "plugin:lodash/recommended", "plugin:import/errors", "plugin:import/warnings"],
-  "plugins": ["mocha", "lodash"],
+  "plugins": ["lodash"],
   "globals": {
     "__DEV__": false,
     "__TEST__": false,
@@ -20,7 +20,6 @@ module.exports = {
   "rules": {
     "lodash/prefer-lodash-method": [2, {"except": ["find"]}],
     "max-len": [2, 100, 2, {"ignorePattern": "(^import)|(^} from)"}],
-    "mocha/no-exclusive-tests": 2,
     "no-multiple-empty-lines": [2, {"max": 1, "maxBOF": 0, "maxEOF": 0}],
     "object-curly-spacing": [2, "never"],
     "quotes": [2, "double"],
