@@ -6,6 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "bin": {
+    "cicero-lint-setup": "./cicero-lint-setup"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/cicerono/cicero-eslint-config.git"
@@ -20,6 +23,6 @@
   },
   "homepage": "https://github.com/cicerono/cicero-eslint-config#readme",
   "dependencies": {
-    "lodash": "^3.10.1"
+    "eslint-config-airbnb": "^9.0.1"
   }
 }
