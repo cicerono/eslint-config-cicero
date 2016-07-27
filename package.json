@@ -4,8 +4,10 @@
   "description": "eslint config used in Cicero projects",
   "main": "index.js",
   "scripts": {
-    "postinstall": "npm install eslint@^2.9.0 eslint-plugin-jsx-a11y@^1.2.0 eslint-plugin-import@^1.7.0 eslint-plugin-react@^5.0.1",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "cicero-lint-setup": "./cicero-lint-setup"
   },
   "repository": {
     "type": "git",
