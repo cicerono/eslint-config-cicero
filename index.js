@@ -31,6 +31,7 @@ module.exports = {
     "react/jsx-no-duplicate-props": [2, {"ignoreCase": true}],
     "react/jsx-sort-prop-types": [2, { "callbacksLast": true, "ignoreCase": true, "requiredFirst": false }],
 
+    "arrow-body-style": 0,
     "func-names": 0,
     "import/no-named-as-default": 0,
     "no-case-declarations": 0,
