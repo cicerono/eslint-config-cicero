@@ -3,23 +3,17 @@
 ## Install
 
 ```
- $ npm i --save-dev eslint-config-cicero
+npm i --save-dev eslint-config-cicero
+# The command below will install all peer dependencies
+./node_modules/.bin/cicero-lint-setup
 ```
+
 ## Usage
 Extend in your local config.
 
-#### Strict
 ```json
 {
   "extends": "cicero",
-}
-```
-
-#### Regular
-
-```json
-{
-  "extends": "cicero/base",
 }
 ```
 
