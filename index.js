@@ -1,6 +1,6 @@
 module.exports = {
   "extends": ["eslint-config-airbnb", "plugin:lodash/recommended", "plugin:import/errors", "plugin:import/warnings"],
-  "plugins": ["lodash"],
+  "plugins": ["lodash", "flowtype", "import"],
   "globals": {
     "__DEV__": false,
     "__TEST__": false,
@@ -30,6 +30,14 @@ module.exports = {
     "react/jsx-key": 2,
     "react/jsx-no-duplicate-props": [2, {"ignoreCase": true}],
     "react/jsx-sort-prop-types": [2, { "callbacksLast": true, "ignoreCase": true, "requiredFirst": false }],
+
+    "flowtype/define-flow-type": 1,
+    "flowtype/require-parameter-type": 1,
+    "flowtype/require-return-type": [1, "always", { "annotateUndefined": "never" } ],
+    "flowtype/space-after-type-colon": [ 1, "always" ],
+    "flowtype/space-before-type-colon": [ 1, "never" ],
+    "flowtype/type-id-match": [ 1, "^([A-Z][a-z0-9]+)+Type$" ],
+    "flowtype/use-flow-type": 1,
 
     "arrow-body-style": 0,
     "func-names": 0,
