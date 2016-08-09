@@ -1,18 +1,20 @@
 #!/usr/bin/env node
 var spawn = require('child_process').spawn;
+var packageInfo = require('./package.json');
 
 console.log("Installing peer dependencies");
+
+var dependencies = [];
+
+Object.keys(packageInfo.devDependencies)
+  .forEach(function(dependency) {
+    dependencies.push(dependency + "@" + packageInfo.devDependencies[dependency])
+  });
 
 var install = spawn('npm', [
   'install',
   '--save-dev',
-  'eslint@^2.9.0',
-  'eslint-plugin-jsx-a11y@^1.2.0',
-  'eslint-plugin-import@^1.7.0',
-  'eslint-plugin-react@^5.0.0',
-  'eslint-plugin-lodash@^1.10.1',
-  'eslint-plugin-flowtype@^2.4.0',
-]);
+].concat(dependencies));
 
 install.stdout.on('data', (data) => console.log(data.toString()));
 install.stderr.on('data', (data) => console.error(data.toString()));
