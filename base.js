@@ -1,4 +1,4 @@
-var strict = require("./strict")
+var strict = require("./strict");
 
 module.exports = {
   "extends": require.resolve("./strict.js"),
@@ -45,6 +45,6 @@ module.exports = {
     "lodash/prefer-noop": 0,
     "lodash/prefer-reject": 0,
     "lodash/prefer-startswith": 0,
-    "lodash/prop-shorthand": 0
-  }
+    "lodash/prop-shorthand": 0,
+  },
 };
