@@ -35,7 +35,7 @@ module.exports = {
     "react/jsx-indent": [2, 2],
     "react/jsx-key": 2,
     "react/jsx-no-duplicate-props": [2, {"ignoreCase": true}],
-    "react/jsx-sort-prop-types": [2, {
+    "react/sort-prop-types": [2, {
       "callbacksLast": true,
       "ignoreCase": true,
       "requiredFirst": false,
