@@ -52,6 +52,7 @@ module.exports = {
     "arrow-body-style": 0,
     "func-names": 0,
     "import/no-named-as-default": 0,
+    "import/prefer-default-export": 0,
     "no-case-declarations": 0,
     "no-else-return": 0,
     "react/jsx-no-bind": 0,
