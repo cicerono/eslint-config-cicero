@@ -46,7 +46,7 @@ module.exports = {
     "flowtype/require-return-type": [1, "always", {"annotateUndefined": "never"}],
     "flowtype/space-after-type-colon": [1, "always"],
     "flowtype/space-before-type-colon": [1, "never"],
-    "flowtype/type-id-match": [1, "^([A-Z][a-z0-9]+)+Type$"],
+    "flowtype/type-id-match": [1, "^([A-Z][a-z0-9]+)+"],
     "flowtype/use-flow-type": 1,
 
     "arrow-body-style": 0,
