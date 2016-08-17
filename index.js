@@ -29,6 +29,7 @@ module.exports = {
     "no-multiple-empty-lines": [2, {"max": 1, "maxBOF": 0, "maxEOF": 0}],
     "object-curly-spacing": [2, "never"],
     "quotes": [2, "double"],
+    "import/no-extraneous-dependencies": [2, {"devDependencies": true}],
     "react/jsx-curly-spacing": [2, "never", {"allowMultiline": true}],
     "react/jsx-equals-spacing": [2, "never"],
     "react/jsx-first-prop-new-line": [2, "multiline"],
