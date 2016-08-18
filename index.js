@@ -54,11 +54,12 @@ module.exports = {
     "func-names": 0,
     "import/no-named-as-default": 0,
     "import/prefer-default-export": 0,
+    "linebreak-style": 0,
     "no-case-declarations": 0,
     "no-else-return": 0,
+    "react/jsx-filename-extension": 0,
     "react/jsx-no-bind": 0,
     "react/prefer-es6-class": 0,
-    "react/jsx-filename-extension": 0,
 
     "prefer-template": 0,
   },
