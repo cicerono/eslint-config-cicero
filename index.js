@@ -42,6 +42,9 @@ module.exports = {
       "requiredFirst": false,
     }],
 
+    "no-duplicate-imports": [0],
+    "import/no-duplicates": [2],
+
     "flowtype/define-flow-type": 1,
     "flowtype/require-valid-file-annotation": 1,
     "flowtype/space-after-type-colon": [1, "always"],
