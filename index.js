@@ -41,6 +41,18 @@ module.exports = {
       "ignoreCase": true,
       "requiredFirst": false,
     }],
+    "react/sort-comp": [2, {
+      "order": [
+        "type-annotations",
+        "static-methods",
+        "lifecycle",
+        "/^on.+$/",
+        "/^(get|set)(?!(InitialState$|DefaultProps$|ChildContext$)).+$/",
+        "everything-else",
+        "/^render.+$/",
+        "render",
+      ],
+    }],
 
     "no-duplicate-imports": [0],
     "import/no-duplicates": [2],
