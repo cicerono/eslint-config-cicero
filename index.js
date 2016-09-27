@@ -87,7 +87,5 @@ module.exports = {
     "react/jsx-filename-extension": 0,
     "react/jsx-no-bind": 0,
     "react/prefer-es6-class": 0,
-
-    "prefer-template": 0,
   },
 };
