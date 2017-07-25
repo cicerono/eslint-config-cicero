@@ -31,6 +31,8 @@
     "eslint-plugin-jsx-a11y": "^5.1.1",
     "eslint-plugin-lodash": "^2.4.4",
     "eslint-plugin-lodash-fp": "^2.1.3",
-    "eslint-plugin-react": "^7.1.0"
+    "eslint-plugin-prettier": "^2.1.2",
+    "eslint-plugin-react": "^7.1.0",
+    "prettier": "^1.5.3"
   }
 }
