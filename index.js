@@ -7,22 +7,6 @@ module.exports = {
     "plugin:import/warnings",
   ],
   "plugins": ["lodash", "flowtype", "import"],
-  "globals": {
-    "__DEV__": false,
-    "__TEST__": false,
-    "__RELEASE__": false,
-    "API_PREFIX": false,
-    "exports": false,
-    "fixtures": false,
-    "LOG_LEVEL": false,
-    "sinon": false,
-    "SLOW_TEST_TIMEOUT": false,
-    "TestUtils": false,
-    "expect": false,
-  },
-  "ecmaFeatures": {
-    "templateStrings": true,
-  },
   "rules": {
     "lodash/prefer-lodash-method": [2, {"ignoreObjects": ["wrapper", "component"]}],
     "max-len": [2, 100, 2, {"ignorePattern": "(^import)|(^} from)"}],
