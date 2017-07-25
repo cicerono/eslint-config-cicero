@@ -12,6 +12,7 @@ module.exports = {
   plugins: ["lodash", "flowtype", "import", "prettier"],
   rules: {
     "lodash/prefer-lodash-method": [2, {ignoreObjects: ["wrapper", "component"]}],
+    "lodash/import-scope": [2, "member"],
     "max-len": [2, 100, 2, {ignorePattern: "(^import)|(^} from)"}],
     "import/no-extraneous-dependencies": [2, {devDependencies: true}],
     "react/jsx-key": 2,
