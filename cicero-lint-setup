@@ -1,27 +1,32 @@
 #!/usr/bin/env node
-var spawn = require('child_process').spawn;
-var packageInfo = require('./package.json');
+/* eslint-disable no-console */
+const spawn = require("child_process").spawn;
+const packageInfo = require("./package.json");
 
 console.log("Installing peer dependencies");
 
-var dependencies = [];
+let dependencies = Object.keys(packageInfo.devDependencies)
+  .map(dependency => `${dependency}@${packageInfo.devDependencies[dependency]}`);
 
-Object.keys(packageInfo.devDependencies)
-  .forEach(function(dependency) {
-    dependencies.push(dependency + "@" + packageInfo.devDependencies[dependency])
-  });
+if (process.argv.indexOf("prettier") === -1) {
+  dependencies = dependencies.filter(dependency => !/prettier/.test(dependency));
+}
 
-var install = spawn('npm', [
-  'install',
-  '--save-dev',
+if (process.argv.indexOf("lodash") === -1) {
+  dependencies = dependencies.filter(dependency => !/lodash/.test(dependency));
+}
+
+const install = spawn("npm", [
+  "install",
+  "--save-dev",
 ].concat(dependencies));
 
-install.stdout.on('data', (data) => console.log(data.toString()));
-install.stderr.on('data', (data) => console.error(data.toString()));
+install.stdout.on("data", data => console.log(data.toString()));
+install.stderr.on("data", data => console.error(data.toString()));
 
-install.on('close', (code) => {
+install.on("close", (code) => {
   if (code === 0) {
-    console.log(`install was successful`);
+    console.log("install was successful");
   } else {
     console.log(`install failed with exit code ${code}`);
   }
