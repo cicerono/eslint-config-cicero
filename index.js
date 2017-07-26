@@ -1,74 +1,64 @@
 /* eslint-disable quote-props */
 module.exports = {
-  extends: [
+  "extends": [
     "eslint-config-airbnb",
     "plugin:lodash/recommended",
     "plugin:import/errors",
     "plugin:import/warnings",
-    "prettier",
-    "prettier/flowtype",
-    "prettier/react",
   ],
-  plugins: ["lodash", "flowtype", "import", "prettier"],
-  rules: {
-    "lodash/prefer-lodash-method": [2, {ignoreObjects: ["wrapper", "component"]}],
+  "plugins": ["lodash", "flowtype", "import"],
+  "rules": {
+    "lodash/prefer-lodash-method": [2, {"ignoreObjects": ["wrapper", "component"]}],
     "lodash/import-scope": [2, "member"],
-    "max-len": [2, 100, 2, {ignorePattern: "(^import)|(^} from)"}],
-    "import/no-extraneous-dependencies": [2, {devDependencies: true}],
+    "max-len": [2, 100, 2, {"ignorePattern": "(^import)|(^} from)"}],
+    "no-multiple-empty-lines": [2, {"max": 1, "maxBOF": 0, "maxEOF": 0}],
+    "object-curly-spacing": [2, "never"],
+    "quotes": [2, "double"],
+    "import/no-extraneous-dependencies": [2, {"devDependencies": true}],
+    "react/jsx-curly-spacing": [2, "never", {"allowMultiline": true}],
+    "react/jsx-equals-spacing": [2, "never"],
+    "react/jsx-first-prop-new-line": [2, "multiline"],
+    "react/jsx-indent": [2, 2],
     "react/jsx-key": 2,
-    "react/jsx-no-duplicate-props": [2, {ignoreCase: true}],
-    "react/sort-prop-types": [
-      2,
-      {
-        callbacksLast: true,
-        ignoreCase: true,
-        requiredFirst: false,
-      },
-    ],
-    "react/sort-comp": [
-      2,
-      {
-        order: [
-          "type-annotations",
-          "static-methods",
-          "lifecycle",
-          "/^on.+$/",
-          "/^(get|set)(?!(InitialState$|DefaultProps$|ChildContext$)).+$/",
-          "everything-else",
-          "/^render.+$/",
-          "render",
-        ],
-      },
-    ],
+    "react/jsx-no-duplicate-props": [2, {"ignoreCase": true}],
+    "react/sort-prop-types": [2, {
+      "callbacksLast": true,
+      "ignoreCase": true,
+      "requiredFirst": false,
+    }],
+    "react/sort-comp": [2, {
+      "order": [
+        "type-annotations",
+        "static-methods",
+        "lifecycle",
+        "/^on.+$/",
+        "/^(get|set)(?!(InitialState$|DefaultProps$|ChildContext$)).+$/",
+        "everything-else",
+        "/^render.+$/",
+        "render",
+      ],
+    }],
 
     "no-duplicate-imports": [0],
     "import/no-duplicates": [2],
 
-    "prettier/prettier": [
-      "error",
-      {
-        printWidth: 100,
-        singleQuote: false,
-        trailingComma: "all",
-        bracketSpacing: false,
-        jsxBracketSameLine: false,
-        parser: "flow",
-      },
-    ],
-
     "flowtype/boolean-style": [1, "boolean"],
     "flowtype/define-flow-type": 1,
+    "flowtype/delimiter-dangle": [1, "only-multiline"],
+    "flowtype/generic-spacing": [1, "never"],
     "flowtype/no-dupe-keys": 2,
-    "flowtype/no-weak-types": [
-      2,
-      {
-        any: true,
-        Object: true,
-        Function: true,
-      },
-    ],
+    "flowtype/no-weak-types": [2, {
+      "any": true,
+      "Object": true,
+      "Function": true,
+    }],
     "flowtype/require-valid-file-annotation": 1,
+    "flowtype/semi": 2,
+    "flowtype/space-after-type-colon": [1, "always"],
+    "flowtype/space-before-generic-bracket": [1, "never"],
+    "flowtype/space-before-type-colon": [1, "never"],
     "flowtype/type-id-match": [1, "^([A-Z][a-z0-9]+)+"],
+    "flowtype/union-intersection-spacing": [1, "always"],
     "flowtype/use-flow-type": 1,
     "flowtype/valid-syntax": 2,
 
