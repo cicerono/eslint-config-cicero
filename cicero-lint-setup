@@ -26,7 +26,8 @@ install.stderr.on("data", data => console.error(data.toString()));
 
 install.on("close", (code) => {
   if (code === 0) {
-    console.log("install was successful");
+    console.log("Install was successful ✨");
+    console.log("If this project is using yarn you will now have to remove package-lock.json and run yarn to update yarn.lock");
   } else {
     console.log(`install failed with exit code ${code}`);
   }
