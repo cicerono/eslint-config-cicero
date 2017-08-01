@@ -16,6 +16,11 @@ if (process.argv.indexOf("lodash") === -1) {
   dependencies = dependencies.filter(dependency => !/lodash/.test(dependency));
 }
 
+if (process.argv.indexOf("base") === -1) {
+  dependencies = dependencies.filter(dependency => !/react/.test(dependency));
+  dependencies = dependencies.filter(dependency => !/a11y/.test(dependency));
+}
+
 const install = spawn("npm", [
   "install",
   "--save-dev",
