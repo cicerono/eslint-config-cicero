@@ -21,7 +21,7 @@ if (process.argv.indexOf("base") === -1) {
   dependencies = dependencies.filter(dependency => !/a11y/.test(dependency));
 }
 
-const install = spawn("npm", [
+const install = spawn(/^win/.test(process.platform) ? "npm.cmd": "npm", [
   "install",
   "--save-dev",
 ].concat(dependencies));
