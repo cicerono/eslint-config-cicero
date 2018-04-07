@@ -35,7 +35,7 @@ async function buildConfig() {
   const answers = await inquirer.prompt([
     {type: "confirm", name: "prettier", message: "Use prettier?"},
     {type: "confirm", name: "react", message: "Is this a react project?"},
-    {type: "confirm", name: "prettier", message: "Use flowtype?"},
+    {type: "confirm", name: "flowtype", message: "Use flowtype?"},
     {
       type: "list",
       name: "lodash",
