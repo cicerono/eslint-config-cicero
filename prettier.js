@@ -1,10 +1,6 @@
 /* eslint-disable quote-props */
 module.exports = {
-  extends: [
-    "prettier",
-    "prettier/flowtype",
-    "prettier/react",
-  ],
+  extends: ["prettier", "prettier/flowtype", "prettier/react"],
   plugins: ["prettier"],
   rules: {
     "prettier/prettier": [
@@ -18,6 +14,5 @@ module.exports = {
         parser: "flow",
       },
     ],
-
   },
 };

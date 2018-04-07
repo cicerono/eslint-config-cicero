@@ -1,20 +1,20 @@
 /* eslint-disable quote-props */
 module.exports = {
-  "extends": [
+  extends: [
     "eslint-config-airbnb-base",
     "plugin:lodash/recommended",
     "plugin:import/errors",
     "plugin:import/warnings",
   ],
-  "plugins": ["lodash", "flowtype", "import"],
-  "rules": {
-    "lodash/prefer-lodash-method": [2, {"ignoreObjects": ["wrapper", "component"]}],
+  plugins: ["lodash", "flowtype", "import"],
+  rules: {
+    "lodash/prefer-lodash-method": [2, {ignoreObjects: ["wrapper", "component"]}],
     "lodash/import-scope": [2, "member"],
-    "max-len": [2, 100, 2, {"ignorePattern": "(^import)|(^} from)"}],
-    "no-multiple-empty-lines": [2, {"max": 1, "maxBOF": 0, "maxEOF": 0}],
+    "max-len": [2, 100, 2, {ignorePattern: "(^import)|(^} from)"}],
+    "no-multiple-empty-lines": [2, {max: 1, maxBOF: 0, maxEOF: 0}],
     "object-curly-spacing": [2, "never"],
-    "quotes": [2, "double"],
-    "import/no-extraneous-dependencies": [2, {"devDependencies": true}],
+    quotes: [2, "double"],
+    "import/no-extraneous-dependencies": [2, {devDependencies: true}],
 
     "no-duplicate-imports": [0],
     "import/no-duplicates": [2],
@@ -24,11 +24,14 @@ module.exports = {
     "flowtype/delimiter-dangle": [1, "only-multiline"],
     "flowtype/generic-spacing": [1, "never"],
     "flowtype/no-dupe-keys": 2,
-    "flowtype/no-weak-types": [2, {
-      "any": true,
-      "Object": true,
-      "Function": true,
-    }],
+    "flowtype/no-weak-types": [
+      2,
+      {
+        any: true,
+        Object: true,
+        Function: true,
+      },
+    ],
     "flowtype/require-valid-file-annotation": 1,
     "flowtype/semi": 2,
     "flowtype/space-after-type-colon": [1, "always"],
