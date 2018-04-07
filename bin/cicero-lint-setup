@@ -1,39 +1,108 @@
 #!/usr/bin/env node
-/* eslint-disable no-console */
-const spawn = require("child_process").spawn;
-const packageInfo = require("./package.json");
+/* eslint-disable no-console, no-use-before-define */
+const fs = require("fs");
+const path = require("path");
+const inquirer = require("inquirer");
+const Listr = require("listr");
+const execa = require("execa");
+const {promisify} = require("util");
 
-console.log("Installing peer dependencies");
+const packageInfo = require("../package.json");
 
-let dependencies = Object.keys(packageInfo.devDependencies)
-  .map(dependency => `${dependency}@${packageInfo.devDependencies[dependency]}`);
+const writeFile = promisify(fs.writeFile);
 
-if (process.argv.indexOf("prettier") === -1) {
-  dependencies = dependencies.filter(dependency => !/prettier/.test(dependency));
+async function main() {
+  const config = await buildConfig();
+  const tasks = new Listr([
+    {
+      title: `Installing dependencies ${config.dependencies.join(" ")}`,
+      task: () => install(config),
+    },
+    {
+      title: "Creating configuration",
+      task: () => updateEslintConfig(config),
+    },
+  ]);
+  await tasks.run();
 }
 
-if (process.argv.indexOf("lodash") === -1) {
-  dependencies = dependencies.filter(dependency => !/lodash/.test(dependency));
-}
-
-if (process.argv.indexOf("base") === -1) {
-  dependencies = dependencies.filter(dependency => !/react/.test(dependency));
-  dependencies = dependencies.filter(dependency => !/a11y/.test(dependency));
-}
-
-const install = spawn(/^win/.test(process.platform) ? "npm.cmd": "npm", [
-  "install",
-  "--save-dev",
-].concat(dependencies));
-
-install.stdout.on("data", data => console.log(data.toString()));
-install.stderr.on("data", data => console.error(data.toString()));
-
-install.on("close", (code) => {
-  if (code === 0) {
-    console.log("Install was successful ✨");
-    console.log("If this project is using yarn you will now have to remove package-lock.json and run yarn to update yarn.lock");
-  } else {
-    console.log(`install failed with exit code ${code}`);
-  }
+main().catch(error => {
+  console.error(error);
+  process.exit(1);
 });
+
+async function buildConfig() {
+  const answers = await inquirer.prompt([
+    {type: "confirm", name: "prettier", message: "Use prettier?"},
+    {type: "confirm", name: "react", message: "Is this a react project?"},
+    {type: "confirm", name: "prettier", message: "Use flowtype?"},
+    {
+      type: "list",
+      name: "lodash",
+      message: "Use lodash?",
+      choices: ["lodash", "lodash-fp", "none"],
+    },
+  ]);
+  const config = {...answers, yarn: fs.existsSync(path.resolve(process.cwd(), "yarn.lock"))};
+  config.dependencies = createDependenciesConfig(config);
+
+  if (process.env.DEBUG) {
+    console.log(config);
+  }
+
+  return config;
+}
+
+function updateEslintConfig(config) {
+  const eslintConfig = {
+    extends: [
+      config.react ? "cicero/react" : "cicero",
+      ...(config.prettier ? ["cicero/prettier"] : []),
+      ...(config.lodash !== "none" ? [`cicero/${config.lodash}`] : []),
+      ...(config.flowtype !== "none" ? [`cicero/flowtype`] : []),
+    ],
+  };
+  const json = JSON.stringify(eslintConfig, null, 2);
+  writeFile(path.join(process.cwd(), ".eslintrc"), json);
+}
+
+function createDependenciesConfig(config) {
+  const dependencies = [dependencyString("eslint"), dependencyString("eslint-plugin-import")];
+
+  if (config.prettier) {
+    dependencies.push(dependencyString("eslint-config-prettier"));
+    dependencies.push(dependencyString("eslint-plugin-prettier"));
+    dependencies.push("prettier@latest");
+  }
+
+  if (config.react) {
+    dependencies.push(dependencyString("eslint-config-airbnb"));
+    dependencies.push(dependencyString("eslint-plugin-react"));
+    dependencies.push(dependencyString("eslint-plugin-jsx-a11y"));
+  } else {
+    dependencies.push(dependencyString("eslint-config-airbnb-base"));
+  }
+
+  if (config.lodash === "lodash") {
+    dependencies.push(dependencyString("eslint-plugin-lodash"));
+  } else if (config.lodash === "lodash") {
+    dependencies.push(dependencyString("eslint-plugin-lodash-fp"));
+  }
+
+  if (config.flowtype) {
+    dependencies.push(dependencyString("eslint-plugin-flowtype"));
+  }
+
+  return dependencies;
+}
+
+function dependencyString(name) {
+  return `${name}@${packageInfo.devDependencies[name]}`;
+}
+
+function install(config) {
+  if (config.yarn) {
+    return execa("yarn", ["add", "--dev", ...config.dependencies]);
+  }
+  return execa("npm", ["install", "--dev", ...config.dependencies]);
+}
