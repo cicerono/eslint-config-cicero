@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.0.3"></a>
+## [5.0.3](https://github.com/cicerono/cicero-eslint-config/compare/v5.0.2...v5.0.3) (2018-04-08)
+
+
+### Bug Fixes
+
+* Fix check of lodash-fp when adding dependencies ([b967461](https://github.com/cicerono/cicero-eslint-config/commit/b967461))
+
+
+
 <a name="5.0.2"></a>
 ## [5.0.2](https://github.com/cicerono/cicero-eslint-config/compare/v5.0.1...v5.0.2) (2018-04-08)
 
