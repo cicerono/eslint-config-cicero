@@ -43,7 +43,11 @@ async function buildConfig() {
       choices: ["lodash", "lodash-fp", "none"],
     },
   ]);
-  const config = {...answers, yarn: fs.existsSync(path.resolve(process.cwd(), "yarn.lock"))};
+  const config = {
+    ...answers,
+    yarn: fs.existsSync(path.resolve(process.cwd(), "yarn.lock")),
+    babel: fs.existsSync(path.resolve(process.cwd(), ".babelrc")),
+  };
   config.dependencies = createDependenciesConfig(config);
 
   if (process.env.DEBUG) {
@@ -91,6 +95,10 @@ function createDependenciesConfig(config) {
 
   if (config.flowtype) {
     dependencies.push(dependencyString("eslint-plugin-flowtype"));
+  }
+
+  if (config.babel) {
+    dependencies.push("babel-eslint@latest");
   }
 
   return dependencies;
