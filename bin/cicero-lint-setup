@@ -67,7 +67,13 @@ function updateEslintConfig(config) {
     ],
   };
   const json = JSON.stringify(eslintConfig, null, 2);
-  writeFile(path.join(process.cwd(), ".eslintrc"), json);
+
+  const jsFile = fs.existsSync(path.resolve(process.cwd(), ".eslintrc.js"));
+  if (jsFile) {
+    writeFile(path.join(process.cwd(), ".eslintrc.js"), `module.exports = ${json}`);
+  } else {
+    writeFile(path.join(process.cwd(), ".eslintrc"), json);
+  }
 }
 
 function createDependenciesConfig(config) {
