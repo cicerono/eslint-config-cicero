@@ -66,6 +66,11 @@ function updateEslintConfig(config) {
       ...(config.flowtype !== "none" ? [`cicero/flowtype`] : []),
     ],
   };
+
+  if (config.babel) {
+    eslintConfig.parser = "babel-eslint";
+  }
+
   const json = JSON.stringify(eslintConfig, null, 2);
 
   const jsFile = fs.existsSync(path.resolve(process.cwd(), ".eslintrc.js"));
