@@ -100,7 +100,7 @@ function createDependenciesConfig(config) {
 
   if (config.lodash === "lodash") {
     dependencies.push(dependencyString("eslint-plugin-lodash"));
-  } else if (config.lodash === "lodash") {
+  } else if (config.lodash === "lodash-fp") {
     dependencies.push(dependencyString("eslint-plugin-lodash-fp"));
   }
 
