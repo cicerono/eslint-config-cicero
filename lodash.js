@@ -5,6 +5,6 @@ module.exports = {
   plugins: ["lodash"],
   rules: {
     "lodash/prefer-lodash-method": [2, {ignoreObjects: ["wrapper", "component"]}],
-    "lodash/import-scope": [2, "member"],
+    "lodash/import-scope": 0,
   },
 };
