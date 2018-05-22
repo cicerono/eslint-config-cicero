@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.0.6"></a>
+## [5.0.6](https://github.com/cicerono/cicero-eslint-config/compare/v5.0.5...v5.0.6) (2018-05-22)
+
+
+### Bug Fixes
+
+* Update eslint-plugin-flowtype to 2.46.3 ([11aa53c](https://github.com/cicerono/cicero-eslint-config/commit/11aa53c))
+* Update prettier to 1.12.1 ([291e787](https://github.com/cicerono/cicero-eslint-config/commit/291e787))
+
+
+
 <a name="5.0.5"></a>
 ## [5.0.5](https://github.com/cicerono/cicero-eslint-config/compare/v5.0.4...v5.0.5) (2018-05-22)
 
