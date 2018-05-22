@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.0.5"></a>
+## [5.0.5](https://github.com/cicerono/cicero-eslint-config/compare/v5.0.4...v5.0.5) (2018-05-22)
+
+
+### Bug Fixes
+
+* ignore isArray in lodash rules ([8e08c1b](https://github.com/cicerono/cicero-eslint-config/commit/8e08c1b))
+
+
+
 <a name="5.0.4"></a>
 ## [5.0.4](https://github.com/cicerono/cicero-eslint-config/compare/v5.0.3...v5.0.4) (2018-04-10)
 
