@@ -41,3 +41,7 @@ Use this if the project uses regular lodash.
 ### `cicero/lodash-fp`
 
 Use this if the project uses lodash-fp.
+
+### `cicero/promise`
+
+Use this if the project uses asynchronous code via promises.
