@@ -36,6 +36,7 @@ async function buildConfig() {
     {type: "confirm", name: "prettier", message: "Use prettier?"},
     {type: "confirm", name: "react", message: "Is this a react project?"},
     {type: "confirm", name: "flowtype", message: "Use flowtype?"},
+    {type: "confirm", name: "promise", message: "Use promises?"},
     {
       type: "list",
       name: "lodash",
@@ -64,6 +65,7 @@ function updateEslintConfig(config) {
       ...(config.prettier ? ["cicero/prettier"] : []),
       ...(config.lodash !== "none" ? [`cicero/${config.lodash}`] : []),
       ...(config.flowtype !== "none" ? [`cicero/flowtype`] : []),
+      ...(config.promise !== "none" ? [`cicero/promise`] : []),
     ],
   };
 
@@ -106,6 +108,10 @@ function createDependenciesConfig(config) {
 
   if (config.flowtype) {
     dependencies.push(dependencyString("eslint-plugin-flowtype"));
+  }
+
+  if (config.promise) {
+    dependencies.push(dependencyString("eslint-plugin-promise"));
   }
 
   if (config.babel) {
