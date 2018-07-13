@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.1.0"></a>
+## [5.1.0](https://github.com/cicerono/cicero-eslint-config/compare/v5.0.6...v5.1.0) (2018-07-13)
+
+
+### Features
+
+* add option for linting promises ([e5e436a](https://github.com/cicerono/cicero-eslint-config/commit/e5e436a))
+
+
+
 <a name="5.0.6"></a>
 ## [5.0.6](https://github.com/cicerono/cicero-eslint-config/compare/v5.0.5...v5.0.6) (2018-05-22)
 
